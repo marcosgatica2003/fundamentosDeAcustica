@@ -1,0 +1,56 @@
+clc;
+clear;
+%%
+% Inicialización y convolución
+[y1 fs] = audioread('C:\Users\Bill\Documents\Facultad\6to\Acustica\Señales (signals)\Nativas (anecoicas)\XILOFON.WAV'); % Señal anecoica
+ y1=y1(1:1472940).*0.05;
+[y2 fs] = audioread('C:\Users\Bill\Documents\Facultad\6to\Acustica\Tp2\Señales\MRIR-PSCJ-FSO1M3-esw.wav'); % Respuesta impulsiva medida
+y3=conv(y1,y2);
+audiowrite('XILOFON-MRIR-PSCJ-FSO1M3-esw.wav',y3, fs);
+%%
+% PSD de la señal CONVOLUCIONADA
+figure(1)
+nfft1 = 2^nextpow2(length(y3));
+Pxx1 = abs(fft(y3,nfft1)).^2/length(y3)/fs;
+Hpsd1 = dspdata.psd(Pxx1(1:length(Pxx1)/2),'fs',fs);
+plot(Hpsd1)
+xlabel('Frecuencia [kHz]');
+ylabel('Potencia/Frecuencia [dB/Hz]');
+title('CONVOLUCIONADA')
+ylim([-200 0]);
+xlim([0.02 22.25])
+grid on
+%%
+% PSD de la señal ORIGINAL
+figure(2)
+nfft2 = 2^nextpow2(length(y1));
+Pxx2 = abs(fft(y1,nfft2)).^2/length(y1)/fs;
+Hpsd2 = dspdata.psd(Pxx2(1:length(Pxx2)/2),'fs',fs);
+plot(Hpsd2)
+xlabel('Frecuencia [kHz]');
+ylabel('Potencia/Frecuencia [dB/Hz]');
+title('ORIGINAL')
+ylim([-200 0]);
+xlim([0.02 22.25])
+grid on
+%%
+% FFT de ambas señales
+figure(3)
+L1=length(y1); %
+NFFT1 = 2^nextpow2(L1); % fft señal original
+Y1 = fft(y1,NFFT1)/L1; % (anecoica)
+f1 = fs/2*linspace(0,1,NFFT1/2+1); %
+L3=length(y3); %
+NFFT3 = 2^nextpow2(L3); % fft señal convolucionada
+Y3 = fft(0.1.*y3,NFFT3)/L3; % (auralizada)
+f3 = fs/2*linspace(0,1,NFFT3/2+1); %
+plot(f1,2*abs(Y1(1:NFFT1/2+1)),'b');%
+hold on %
+plot(f3,2*abs(Y3(1:NFFT3/2+1)),'r');% gráficos
+hold off %
+axis([0 30000 0 0.2e-3]) %
+legend('Original','Convolucionada') %
+title('Espectro de ORIGINAL vs CONVOLUCIONADA')
+xlabel('Frequencia (Hz)') %
+ylabel('|Y(f)|') %
+grid on %

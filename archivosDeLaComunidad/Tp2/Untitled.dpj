@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--Created by Dirac 4.0.2552-->
+<root>
+	<Groups>
+		<Group1>
+			<Visible>True</Visible>
+			<Name>Group 1</Name>
+			<Ch1Color>16711680</Ch1Color>
+			<Ch2Color>255</Ch2Color>
+			<Files>
+				<F1>.\BRIR-SUM NORES-esw-p4.wav</F1>
+			</Files>
+		</Group1>
+		<Group2>
+			<Visible>False</Visible>
+			<Name>Group 2</Name>
+			<Ch1Color>0</Ch1Color>
+			<Ch2Color>0</Ch2Color>
+		</Group2>
+		<Group3>
+			<Visible>False</Visible>
+			<Name>Group 3</Name>
+			<Ch1Color>0</Ch1Color>
+			<Ch2Color>0</Ch2Color>
+		</Group3>
+		<Group4>
+			<Visible>False</Visible>
+			<Name>Group 4</Name>
+			<Ch1Color>0</Ch1Color>
+			<Ch2Color>0</Ch2Color>
+		</Group4>
+		<Group5>
+			<Visible>False</Visible>
+			<Name>Group 5</Name>
+			<Ch1Color>0</Ch1Color>
+			<Ch2Color>0</Ch2Color>
+		</Group5>
+		<Group6>
+			<Visible>False</Visible>
+			<Name>Group 6</Name>
+			<Ch1Color>0</Ch1Color>
+			<Ch2Color>0</Ch2Color>
+		</Group6>
+		<Group7>
+			<Visible>False</Visible>
+			<Name>Group 7</Name>
+			<Ch1Color>0</Ch1Color>
+			<Ch2Color>0</Ch2Color>
+		</Group7>
+		<Group8>
+			<Visible>False</Visible>
+			<Name>Group 8</Name>
+			<Ch1Color>0</Ch1Color>
+			<Ch2Color>0</Ch2Color>
+		</Group8>
+		<Group9>
+			<Visible>False</Visible>
+			<Name>Group 9</Name>
+			<Ch1Color>0</Ch1Color>
+			<Ch2Color>0</Ch2Color>
+		</Group9>
+		<Group10>
+			<Visible>False</Visible>
+			<Name>Group 10</Name>
+			<Ch1Color>0</Ch1Color>
+			<Ch2Color>0</Ch2Color>
+		</Group10>
+	</Groups>
+</root>
